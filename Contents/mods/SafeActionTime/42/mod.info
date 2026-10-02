@@ -1,0 +1,7 @@
+name=Safe Action Time
+id=SafeActionTime
+author=ask13
+modversion=0.1.0
+versionMin=42.21
+description=Selective shared-Lua action acceleration for crafting and dismantling. Experimental multiplayer candidate; no building or inventory transfer acceleration.
+incompatible=TwisTonFireFasterActions,yxjs_FasterAction,FasterActionsB42,b42FasterActions,vac_mod_b42_15

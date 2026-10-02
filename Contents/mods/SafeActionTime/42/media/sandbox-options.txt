@@ -1,0 +1,35 @@
+VERSION = 1,
+
+option SafeActionTime.Enabled
+{
+    type = boolean,
+    default = true,
+    page = SafeActionTime,
+    translation = SafeActionTime_Enabled,
+}
+
+option SafeActionTime.SpeedPercent
+{
+    type = integer,
+    default = 200,
+    min = 100,
+    max = 400,
+    page = SafeActionTime,
+    translation = SafeActionTime_SpeedPercent,
+}
+
+option SafeActionTime.Crafting
+{
+    type = boolean,
+    default = true,
+    page = SafeActionTime,
+    translation = SafeActionTime_Crafting,
+}
+
+option SafeActionTime.Dismantling
+{
+    type = boolean,
+    default = true,
+    page = SafeActionTime,
+    translation = SafeActionTime_Dismantling,
+}
