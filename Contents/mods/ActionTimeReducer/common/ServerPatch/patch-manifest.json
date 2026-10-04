@@ -1,0 +1,24 @@
+{
+  "files": [
+    {
+      "path": "zombie/core/Transaction.class",
+      "sha256": "91723D9BDEC8DE211C9DD649B6FF4245EB1E6E345D7D2FB194E60DB80E9AE7CB"
+    },
+    {
+      "path": "actiontimereducer/server/TransferDuration.class",
+      "sha256": "4FD365158F44A738F14249A3A6B222F00551A9F2A5C80FEF803138305828AB42"
+    },
+    {
+      "path": "actiontimereducer/server/TransferDuration$Access.class",
+      "sha256": "D5D04071C4BD4045E36B817B7FB1CCE261DF90B8ADDA6DDA6221DE8D47ED5B85"
+    }
+  ],
+  "hostGameplayVerified": false,
+  "hostCopyTarget": "<ProjectZomboid-install>",
+  "gameVersion": "42.21",
+  "version": "0.4.2",
+  "mode": "manual-class-override",
+  "dedicatedCopyTarget": "<dedicated-server-install>/java",
+  "twoClientGameplayVerified": false,
+  "sourceClassSha256": "107B0A554CC46D1015398FF283A2E48FAF02EFBC44ADF12854F66394EE2487B6"
+}

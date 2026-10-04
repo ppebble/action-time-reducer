@@ -1,0 +1,849 @@
+VERSION = 1,
+
+option ActionTimeReducer.SectionCrafting
+{
+    type = boolean,
+    default = false,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_SectionCrafting,
+}
+
+option ActionTimeReducer.CraftAction
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_CraftAction,
+}
+
+option ActionTimeReducer.HandcraftAction
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_HandcraftAction,
+}
+
+option ActionTimeReducer.ResearchRecipe
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_ResearchRecipe,
+}
+
+option ActionTimeReducer.SectionConstruction
+{
+    type = boolean,
+    default = false,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_SectionConstruction,
+}
+
+option ActionTimeReducer.BuildAction
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_BuildAction,
+}
+
+option ActionTimeReducer.MultiStageBuild
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_MultiStageBuild,
+}
+
+option ActionTimeReducer.DismantleAction
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_DismantleAction,
+}
+
+option ActionTimeReducer.DestroyStuffAction
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_DestroyStuffAction,
+}
+
+option ActionTimeReducer.BarricadeAction
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_BarricadeAction,
+}
+
+option ActionTimeReducer.UnbarricadeAction
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_UnbarricadeAction,
+}
+
+option ActionTimeReducer.PaintAction
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_PaintAction,
+}
+
+option ActionTimeReducer.PaintSignAction
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_PaintSignAction,
+}
+
+option ActionTimeReducer.PlasterAction
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_PlasterAction,
+}
+
+option ActionTimeReducer.WallpaperAction
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_WallpaperAction,
+}
+
+option ActionTimeReducer.ChopTreeAction
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_ChopTreeAction,
+}
+
+option ActionTimeReducer.SectionMedical
+{
+    type = boolean,
+    default = false,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_SectionMedical,
+}
+
+option ActionTimeReducer.ApplyBandage
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_ApplyBandage,
+}
+
+option ActionTimeReducer.Disinfect
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_Disinfect,
+}
+
+option ActionTimeReducer.Stitch
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_Stitch,
+}
+
+option ActionTimeReducer.Splint
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_Splint,
+}
+
+option ActionTimeReducer.RemoveGlass
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_RemoveGlass,
+}
+
+option ActionTimeReducer.RemoveBullet
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_RemoveBullet,
+}
+
+option ActionTimeReducer.CleanBurn
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_CleanBurn,
+}
+
+option ActionTimeReducer.TakePillAction
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_TakePillAction,
+}
+
+option ActionTimeReducer.ComfreyCataplasm
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_ComfreyCataplasm,
+}
+
+option ActionTimeReducer.GarlicCataplasm
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_GarlicCataplasm,
+}
+
+option ActionTimeReducer.PlantainCataplasm
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_PlantainCataplasm,
+}
+
+option ActionTimeReducer.MedicalCheckAction
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_MedicalCheckAction,
+}
+
+option ActionTimeReducer.SectionClothingAndRepair
+{
+    type = boolean,
+    default = false,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_SectionClothingAndRepair,
+}
+
+option ActionTimeReducer.WearClothing
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_WearClothing,
+}
+
+option ActionTimeReducer.RepairClothing
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_RepairClothing,
+}
+
+option ActionTimeReducer.RemovePatch
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_RemovePatch,
+}
+
+option ActionTimeReducer.FixAction
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_FixAction,
+}
+
+option ActionTimeReducer.FixGenerator
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_FixGenerator,
+}
+
+option ActionTimeReducer.SectionVehicleMaintenance
+{
+    type = boolean,
+    default = false,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_SectionVehicleMaintenance,
+}
+
+option ActionTimeReducer.InstallVehiclePart
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_InstallVehiclePart,
+}
+
+option ActionTimeReducer.UninstallVehiclePart
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_UninstallVehiclePart,
+}
+
+option ActionTimeReducer.FixVehiclePartAction
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_FixVehiclePartAction,
+}
+
+option ActionTimeReducer.RepairEngine
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_RepairEngine,
+}
+
+option ActionTimeReducer.TakeEngineParts
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_TakeEngineParts,
+}
+
+option ActionTimeReducer.InflateTire
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_InflateTire,
+}
+
+option ActionTimeReducer.DeflateTire
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_DeflateTire,
+}
+
+option ActionTimeReducer.RepairLightbar
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_RepairLightbar,
+}
+
+option ActionTimeReducer.SectionHygiene
+{
+    type = boolean,
+    default = false,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_SectionHygiene,
+}
+
+option ActionTimeReducer.WashYourself
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_WashYourself,
+}
+
+option ActionTimeReducer.WashClothing
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_WashClothing,
+}
+
+option ActionTimeReducer.CleanBandage
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_CleanBandage,
+}
+
+option ActionTimeReducer.SectionReading
+{
+    type = boolean,
+    default = false,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_SectionReading,
+}
+
+option ActionTimeReducer.ReadABook
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_ReadABook,
+}
+
+option ActionTimeReducer.SectionConsumption
+{
+    type = boolean,
+    default = false,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_SectionConsumption,
+}
+
+option ActionTimeReducer.EatFoodAction
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_EatFoodAction,
+}
+
+option ActionTimeReducer.DrinkFromBottle
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_DrinkFromBottle,
+}
+
+option ActionTimeReducer.DrinkFluidAction
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_DrinkFluidAction,
+}
+
+option ActionTimeReducer.Smoking
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_Smoking,
+}
+
+option ActionTimeReducer.SectionLiquids
+{
+    type = boolean,
+    default = false,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_SectionLiquids,
+}
+
+option ActionTimeReducer.FluidTransferAction
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_FluidTransferAction,
+}
+
+option ActionTimeReducer.FluidEmptyAction
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_FluidEmptyAction,
+}
+
+option ActionTimeReducer.TakeWaterAction
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_TakeWaterAction,
+}
+
+option ActionTimeReducer.AddFluidFromItemAction
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_AddFluidFromItemAction,
+}
+
+option ActionTimeReducer.DumpWaterAction
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_DumpWaterAction,
+}
+
+option ActionTimeReducer.DumpContentsAction
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_DumpContentsAction,
+}
+
+option ActionTimeReducer.AddFuel
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_AddFuel,
+}
+
+option ActionTimeReducer.TakeFuel
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_TakeFuel,
+}
+
+option ActionTimeReducer.AddGasolineToVehicle
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_AddGasolineToVehicle,
+}
+
+option ActionTimeReducer.TakeGasolineFromVehicle
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_TakeGasolineFromVehicle,
+}
+
+option ActionTimeReducer.RefuelFromGasPump
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_RefuelFromGasPump,
+}
+
+option ActionTimeReducer.ConsolidateDrainable
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_ConsolidateDrainable,
+}
+
+option ActionTimeReducer.TransferWaterAction
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_TransferWaterAction,
+}
+
+option ActionTimeReducer.SectionAnimalCare
+{
+    type = boolean,
+    default = false,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_SectionAnimalCare,
+}
+
+option ActionTimeReducer.MilkAnimal
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_MilkAnimal,
+}
+
+option ActionTimeReducer.ShearAnimal
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_ShearAnimal,
+}
+
+option ActionTimeReducer.HutchCleanFloor
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_HutchCleanFloor,
+}
+
+option ActionTimeReducer.HutchCleanNest
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_HutchCleanNest,
+}
+
+option ActionTimeReducer.GiveWaterToAnimal
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_GiveWaterToAnimal,
+}
+
+option ActionTimeReducer.GatherBloodFromAnimal
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_GatherBloodFromAnimal,
+}
+
+option ActionTimeReducer.FeedAnimalFromHand
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_FeedAnimalFromHand,
+}
+
+option ActionTimeReducer.ButcherAnimal
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_ButcherAnimal,
+}
+
+option ActionTimeReducer.CutAnimalOnHook
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_CutAnimalOnHook,
+}
+
+option ActionTimeReducer.GetAnimalBones
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_GetAnimalBones,
+}
+
+option ActionTimeReducer.RemoveHeadFromAnimal
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_RemoveHeadFromAnimal,
+}
+
+option ActionTimeReducer.RemoveLeatherFromAnimal
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_RemoveLeatherFromAnimal,
+}
+
+option ActionTimeReducer.RemoveMeatFromAnimal
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_RemoveMeatFromAnimal,
+}
+
+option ActionTimeReducer.KillAnimalInInventory
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_KillAnimalInInventory,
+}
+
+option ActionTimeReducer.SectionInventoryTransfer
+{
+    type = boolean,
+    default = false,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_SectionInventoryTransfer,
+}
+
+option ActionTimeReducer.InventoryTransfer
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_InventoryTransfer,
+}
+
+option ActionTimeReducer.CartTransfer
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 95,
+    page = ActionTimeReducer,
+    translation = ActionTimeReducer_CartTransfer,
+}

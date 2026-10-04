@@ -1,9 +1,0 @@
-{
-  "Sandbox_SafeActionTime": "선택적 행동시간 단축",
-  "Sandbox_SafeActionTime_Enabled": "선택적 행동시간 단축 사용",
-  "Sandbox_SafeActionTime_Enabled_tooltip": "명시적으로 지원하는 Lua 행동만 적용합니다. 접속 전에 설정하고, 설정 변경 후 서버를 재시작하세요.",
-  "Sandbox_SafeActionTime_SpeedPercent": "행동 속도 (%%)",
-  "Sandbox_SafeActionTime_SpeedPercent_tooltip": "100 = 기본 시간, 200 = 소요시간 절반, 400 = 소요시간 1/4. 건축·아이템 이동·독서·동물·목욕·총기는 가속하지 않습니다.",
-  "Sandbox_SafeActionTime_Crafting": "제작 행동 가속",
-  "Sandbox_SafeActionTime_Dismantling": "지원 구조물 분해 행동 가속"
-}

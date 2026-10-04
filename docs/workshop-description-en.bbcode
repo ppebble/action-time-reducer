@@ -1,0 +1,102 @@
+[h1]Action Time Reducer[/h1]
+For Project Zomboid [b]Build 42[/b]. Tested on [b]42.21[/b]; 42.20 compatibility has not been verified. Set each supported action's reduction independently through sandbox options.
+
+[b]Singleplayer: subscribe and enable the mod. No manual patch is required.[/b]
+[b]Multiplayer inventory transfers require a manual patch on the server operator's installation only.[/b] Joining players use the regular mod and do not install Java files. Without the server patch, multiplayer transfers retain their original duration.
+
+Developed and tested by one person. Singleplayer reductions and patched dedicated-server transfers have been confirmed in gameplay. Dedicated tests used a local client and separate server process on one computer. In-game hosting was tested only from the host's side. Multiple-player testing on separate computers remains incomplete.
+
+[h2]Sandbox options[/h2]
+[b]76 individual options[/b] share one Action Time Reduction page. Checkbox dividers mark 11 sections; checking them has no effect. All options default to [b]0[/b]. Enter a whole number from [b]0 to 95[/b], without a % sign.
+Higher values shorten actions further. [b]0[/b] keeps the original duration; [b]30[/b] takes approximately 70% of the original time; [b]50[/b] takes approximately half.
+
+Animations and server intervals can cause small differences from the selected percentage.
+
+[b]Updating to 0.5.0:[/b] Old category values do not carry over to new action options, which start at 0. The existing Inventory Transfer value is retained. Eating and smoking have separate options.
+
+Sections and examples:
+
+[list]
+[*][b]Crafting & Research[/b]: ordinary crafting, B42 handcrafting, sawing logs and recipe research.
+[*][b]Construction, Dismantling & Tree Chopping[/b]: building, demolition, dismantling, barricading/unbarricading, painting, plastering, wallpapering and chopping trees.
+[*][b]Medical Treatment[/b]: bandages, disinfection, stitches, splints, removing glass/bullets, burns, pills, poultices and examinations.
+[*][b]Clothing & Item Repair[/b]: wearing clothes, clothing repair, removing patches, item and generator repairs.
+[*][b]Vehicle Maintenance[/b]: installing/removing/repairing parts, engine work, tire inflation/deflation and lightbar repair.
+[*][b]Hygiene & Laundry[/b]: vanilla washing, clothes washing and bandage cleaning.
+[*][b]Reading[/b]: books, magazines and other supported reading.
+[*][b]Eating, Drinking & Smoking[/b]: food, drinks, vanilla cigarettes and cigars.
+[*][b]Liquid & Fuel Transfer[/b]: collecting water, moving/emptying liquids, refueling and fuel transfers.
+[*][b]Animal Care & Butchering[/b]: milking, shearing, watering, feeding, hutch cleaning, butchering and carcass processing.
+[*][b]Inventory Transfer[/b]: moving items between inventories, bags and containers. Multiplayer requires the server patch below.
+[/list]
+
+[h2]Supported actions[/h2]
+74 allowlisted vanilla action classes plus a separate smoking setting retain their original completion, cancellation, resources, XP and server approval paths.
+
+[b]New building placement (ISBuildAction) is supported in singleplayer only.[/b] Multiplayer multi-stage construction, demolition, dismantling, barricades, finishing and tree chopping have separate supported paths. The inventory-transfer patch does not enable multiplayer building placement.
+
+[h2]Server operators: manual patch installation[/h2]
+Only needed for [b]multiplayer inventory transfers[/b]. Version 0.5.0 leaves the Java patch unchanged: an existing compatible 0.4.2 patch on the same 42.21 game version needs no recopy. 
+
+[b]1. Save, fully close the game/server, and back up existing files BEFORE installing.[/b]
+Copying files while running does not replace classes already loaded.
+
+First locate the destination: dedicated servers use their installation's java folder; in-game Host uses the regular game folder. Full paths are in step 3.
+Check these relative paths before copying anything:
+[code]zombie/core/Transaction.class
+actiontimereducer/server/TransferDuration.class
+actiontimereducer/server/TransferDuration$Access.class[/code]
+Back up existing files outside the installation, preserving their paths. If none exist, no individual backup is needed: the original class is inside projectzomboid.jar.
+If you cannot identify an existing Transaction.class, stop before overwriting it.
+
+[b]2. Subscribe and let Steam finish downloading this mod.[/b]
+Locate the following folder in your Steam library:
+[code]SteamLibrary/steamapps/workshop/content/108600/3812917260/mods/ActionTimeReducer/common/ServerPatch/classes[/code]
+
+ServerPatch/README.md also contains instructions.
+
+[b]3. Choose the destination for the server you actually run.[/b]
+[list]
+[*][b]Steam dedicated server[/b]: Project Zomboid Dedicated Server installation, inside [b]java[/b]. Steam Library → Manage → Browse local files locates the installation.
+[code]SteamLibrary/steamapps/common/Project Zomboid Dedicated Server/java[/code]
+[*][b]SteamCMD dedicated server[/b]: the [b]java[/b] folder inside your chosen dedicated-server installation.
+[*][b]In-game Host[/b]: the host's regular Project Zomboid installation folder itself.
+[code]SteamLibrary/steamapps/common/ProjectZomboid[/code]
+[/list]
+
+[b]4. Copy the zombie and actiontimereducer folders inside classes into that destination.[/b]
+[b]Do not copy the classes folder itself.[/b] The final layout must contain exactly these three patch files:
+[code]<destination>/zombie/core/Transaction.class
+<destination>/actiontimereducer/server/TransferDuration.class
+<destination>/actiontimereducer/server/TransferDuration$Access.class[/code]
+Merge existing folders. Replace only a confirmed older Action Time Reducer patch already backed up in step 1.
+
+[b]5. Enable the regular mod on the server and set the reduction.[/b]
+Mod ID: [b]ActionTimeReducer[/b]. Add it to Mods and this page's Workshop ID to WorkshopItems, preserving other entries, or select it through the server settings UI. Server and players must use the same regular mod version. Inventory Transfer defaults to 0: enter your desired reduction.
+
+[b]6. Start the server normally.[/b]
+The copied classes load ahead of the original JAR class. The server adjusts the final transfer duration; [b]joining players do not need a Java patch.[/b]
+
+[h2]Patch updates and removal[/h2]
+[b]This manual patch was built and verified against Build 42.21. Do not use it unchanged on another game version.[/b]
+Copied classes can survive updates and override newer code. [b]Disabling the mod or setting 0 does not remove an outdated class's compatibility risks.[/b]
+[list]
+[*]Before a game update, or when support for the new version is uncertain, close the game/server and remove only the three patch files listed above.
+[*]Copy the new files when a compatible patch is available.
+[*]Workshop updates do not automatically update manually installed copies.
+[*]To uninstall, close the game/server and remove those three patch files. Restore any files present before installation from your backup only if they are still compatible with your current game version. Otherwise, keep the original JAR unchanged so its vanilla class can load.
+[*][b]Never delete the entire zombie folder.[/b] Preserve other files. Empty actiontimereducer/server folders may be removed.
+[/list]
+On the supported game version, inactive mod, 0, missing settings or known conflicts leave the transfer duration unchanged.
+
+[h2]Compatibility and verification[/h2]
+Avoid combining action-speed mods. Some known conflicts disable this mod's reductions; not every external conflict can be detected.
+Gameplay testing is described above.
+
+[hr][/hr]
+
+[h2]More Project Zomboid Mods by ask13[/h2]
+Browse other focused Build 42 tools and compatibility mods in the [url=https://github.com/ppebble/project-zomboid-modding]Project Zomboid Mods & Tools catalog[/url].
+
+Workshop ID: 3812917260
+Mod ID: ActionTimeReducer

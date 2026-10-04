@@ -1,0 +1,8 @@
+name=Action Time Reducer
+id=ActionTimeReducer
+poster=poster.png
+author=ask13
+modversion=0.5.1
+versionMin=42.21
+description=Individual vanilla action time reductions across 76 zero-default sandbox options. Multiplayer inventory transfers require the manual server class patch. New building placement is singleplayer only.
+incompatible=TwisTonFireFasterActions,yxjs_FasterAction,FasterActionsB42,b42FasterActions,vac_mod_b42_15

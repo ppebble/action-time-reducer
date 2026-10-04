@@ -4,8 +4,8 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 $repo = Split-Path $PSScriptRoot -Parent
-$source = Join-Path $repo 'Contents/mods/SafeActionTime'
-$target = Join-Path ([IO.Path]::GetFullPath($ModsRoot)) 'SafeActionTime'
+$source = Join-Path $repo 'Contents/mods/ActionTimeReducer'
+$target = Join-Path ([IO.Path]::GetFullPath($ModsRoot)) 'ActionTimeReducer'
 if (-not $VerifyOnly) {
     if (Test-Path -LiteralPath $target) { throw "Existing install preserved; use -VerifyOnly: $target" }
     New-Item -ItemType Directory -Path $ModsRoot -Force | Out-Null

@@ -1,9 +1,0 @@
-{
-  "Sandbox_SafeActionTime": "Safe Action Time",
-  "Sandbox_SafeActionTime_Enabled": "Enable selective action acceleration",
-  "Sandbox_SafeActionTime_Enabled_tooltip": "Only explicitly supported Lua actions are affected. Configure before joining; restart after changing settings.",
-  "Sandbox_SafeActionTime_SpeedPercent": "Action speed (%%)",
-  "Sandbox_SafeActionTime_SpeedPercent_tooltip": "100 = normal; 200 = half the action time; 400 = one quarter. Does not accelerate building, inventory transfers, reading, animals, bathing or firearms.",
-  "Sandbox_SafeActionTime_Crafting": "Accelerate crafting",
-  "Sandbox_SafeActionTime_Dismantling": "Accelerate supported structure dismantling"
-}

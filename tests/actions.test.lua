@@ -1,4 +1,9 @@
-local options = SandboxVars.SafeActionTime
+local options = SandboxVars.ActionTimeReducer
+check(ActionTimeReducer.conflictBlocked == false, "server helper starts with an explicit conflict decision")
+check(type(gameBootHook) == "function", "server conflict state must refresh at game boot")
+for _, names in pairs(ActionTimeReducer.groups) do
+    for _, name in ipairs(names) do options[ActionTimeReducer.optionKey(_G[name])] = 50 end
+end
 local function craft()
     return ISCraftAction:new(character, {}, recipe, inventory, {})
 end
@@ -23,45 +28,49 @@ for _, class in ipairs({ISCraftAction, ISHandcraftAction, ISDismantleAction}) do
         check(class[key] == value, "class method changed: " .. key)
     end
 end
-check(ISBaseTimedAction.create == baseCreate, "must preserve local create")
+check(ISBaseTimedAction.create ~= baseCreate, "shared execution boundary must handle raw-table allocators")
 check(ISBaseTimedAction.adjustMaxTime == baseAdjust, "must preserve moodles and injury modifiers")
 
-options.SpeedPercent = 100
-check(craft().maxTime == 120, "100% must remain vanilla")
-options.SpeedPercent = 400
-check(craft().maxTime == 30, "400% must quarter duration")
-options.SpeedPercent = 9999
-check(craft().maxTime == 30, "cap at 400%")
-options.SpeedPercent = 0
-check(craft().maxTime == 120, "lower bound 100%")
+options.CraftAction = 0
+check(craft().maxTime == 120, "0 reduction must remain vanilla")
+options.CraftAction = 75
+check(craft().maxTime == 30, "75 reduction must quarter duration")
+options.CraftAction = 9999
+check(math.abs(craft().maxTime - 6) < 0.0001, "cap reduction at 95%")
+options.CraftAction = 0
+check(craft().maxTime == 120, "zero reduction")
 for _, invalid in ipairs({"200", false, math.huge, -math.huge}) do
-    options.SpeedPercent = invalid
+    options.CraftAction = invalid
     check(craft().maxTime == 120, "invalid multiplier must fail closed")
 end
-options.SpeedPercent = 0/0
+options.CraftAction = 0/0
 check(craft().maxTime == 120, "NaN multiplier must fail closed")
-options.SpeedPercent = 200
+options.CraftAction = 50
 options.Enabled = false
-check(craft().maxTime == 120, "disabled must remain vanilla")
-options.Enabled = true
-options.Crafting = false
+check(craft().maxTime == 60, "obsolete master toggle must not silently disable numeric settings")
+options.Enabled = nil
+options.CraftAction = 0
 check(craft().maxTime == 120, "crafting toggle")
 check(dismantle().maxTime == 75, "other category remains enabled")
-options.Crafting = true
-options.Dismantling = false
+options.CraftAction = 50
+options.DismantleAction = 0
 check(dismantle().maxTime == 150, "dismantling toggle")
-options.Dismantling = true
-SandboxVars.SafeActionTime = nil
+options.DismantleAction = 50
+SandboxVars.ActionTimeReducer = nil
 check(craft().maxTime == 120, "missing namespace must remain vanilla")
-SandboxVars.SafeActionTime = options
+SandboxVars.ActionTimeReducer = options
 SandboxVars = nil
 check(craft().maxTime == 120, "missing sandbox must remain vanilla")
-SandboxVars = {SafeActionTime = options}
+SandboxVars = {ActionTimeReducer = options}
 
 for _, id in ipairs({"TwisTonFireFasterActions", "yxjs_FasterAction", "FasterActionsB42", "b42FasterActions", "vac_mod_b42_15"}) do
     activeMods[id] = true
+    gameBootHook()
+    check(ActionTimeReducer.conflictBlocked == true, "server helper must see boot-time conflict without an action allocation")
     check(craft().maxTime == 120, "known conflict must disable acceleration")
     activeMods[id] = nil
+    gameBootHook()
+    check(ActionTimeReducer.conflictBlocked == false, "server helper must recover when conflict is absent")
 end
 
 local unknown = ISBaseTimedAction:derive("TABAS_Wash")
@@ -69,17 +78,17 @@ function unknown:getDuration() return 120 end
 check(ISBaseTimedAction.new(unknown, character):getDuration() == 120, "unknown mod action unchanged")
 local derived = ISCraftAction:derive("ISCraftAction")
 check(ISBaseTimedAction.new(derived, character).getDuration == ISCraftAction.getDuration, "derived class with reused Type excluded")
-for _, name in ipairs({"ISBuildAction", "ISInventoryTransferAction", "ISReadABook", "ISChopTreeAction", "ISMilkAnimal", "ISReloadWeaponAction"}) do
+for _, name in ipairs({"TABAS_TakeShower", "ISFitnessAction", "ISRestAction", "ISMoveablesAction", "ISReloadWeaponAction", "ISAttachItemHotbar"}) do
     local excluded = ISBaseTimedAction:derive(name)
     function excluded:getDuration() return 120 end
     check(ISBaseTimedAction.new(excluded, character):getDuration() == 120, "excluded " .. name)
 end
 
 local wrapped = craft()
-options.SpeedPercent = 400
+options.CraftAction = 75
 check(wrapped:getDuration() == 60, "active action retains captured multiplier")
 check(craft():getDuration() == 30, "new action uses new multiplier")
-options.SpeedPercent = 200
+options.CraftAction = 50
 local rawDuration = ISCraftAction.getDuration
 for _, duration in ipairs({-1, 0, 1, 1.1, 2, math.huge, -math.huge, "invalid"}) do
     ISCraftAction.getDuration = function() return duration end
